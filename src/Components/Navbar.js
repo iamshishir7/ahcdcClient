@@ -19,21 +19,29 @@ const Navbar = props =>{
     const unauthenticatedNavBar = ()=>{
         return (
             <>
-            <nav>
-                <Link to="#">
+                <li>
+                <Link to="#" className="no-txtdeco">
                     Explore
-                </Link>  
-                <Link to="#">
-                    Services 
-                </Link>  
-                <Link to="#">
-                    About   
                 </Link>
-            </nav>
-            <div>
-                <Link to="/login" class='login-button'>Login</Link>
-                <Link to="/register" class='register-button'>Register</Link>
-            </div>
+                </li>  
+                <li>
+                <Link to="./login" className="no-txtdeco">
+                    Services
+                </Link>
+                </li> 
+                <li>
+                <Link to="#" className="no-txtdeco">
+                    About
+                </Link>
+                </li>
+            
+                <li>
+                <div className='nav-buttons'>
+                <Link to="/login"><button className="loginlogout-button">Login</button></Link>
+                
+                <Link to="/register"><button className="register-button">Create Account</button></Link>
+                </div>
+                </li>
             </>
         )
     }
@@ -41,45 +49,60 @@ const Navbar = props =>{
     const authenticatedNavBar = ()=>{
         return(
             <>
-
-                <Link to="/todos">
-                    
-                        Todos
-                    
-                </Link> 
+            
+            <li>
+                <Link to="#" className="no-txtdeco">
+                    Explore
+                </Link>
+                </li>  
+                <li>
+                <Link to="./login" className="no-txtdeco">
+                    Services
+                </Link>
+                </li> 
+                <li>
+                <Link to="#" className="no-txtdeco">
+                    About
+                </Link>
+                </li>
+                
                 {
                     user.role === "admin" ? 
-                    <Link to="/admin">
+                    <li>
+                    <Link to="/admin" className='no-txtdeco'>
                         
                             Admin
                         
-                    </Link> : null
-                }  
-                
+                    </Link>
+                    </li> : null
+                }
+                 
+                <li>
                 <button type="button" 
-                        className="btn-primary" 
+                        className="loginlogout-button" 
                         onClick={onClickLogoutHandler}>Logout</button>
+                </li>
                 
             </>
         )
     }
     return(
-        <section class="head">
-            
+        <nav className="navbar">
+            <div className="max-width">
             
             <Link to="/" className="no-txtdeco">
-            <div id="logo">
+            <div className="logo">
                 <h1>AHCDC</h1>
             </div>
             </Link>
-            
+            <ul className="menu">
             
             
             
                 { !isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
-            
-            
-        </section>
+            </ul>
+            </div>
+        </nav>
     )
 }
 

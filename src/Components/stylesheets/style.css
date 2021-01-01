@@ -6,68 +6,88 @@
 }
 
 body{
-  background-color:#EEFBFB;
+  background-color:#fff;
   
 }
-
-.head{
-  display: flex;
-  justify-content: space-around;
-  min-height: 70px;
-  padding-top:15px;
+.max-width {
+  max-width:1300px;
+  padding:0 80px;
+  margin:auto;
 }
+
+
 
 .no-txtdeco {
   text-decoration: none;
-  color: black;
 }
 
 
 
-nav {
+.navbar{
+
+  width: 100%;
+  padding: 15px 0;
+
+}
+.navbar .max-width {
   display:flex;
-  position: relative;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.navbar .max-width .logo {
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.navbar .max-width .menu li{
+
+  display: inline-block;
+  list-style: none;
+  margin-left: 30px;
+
+}
+.navbar .max-width .menu li link{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  
 
 }
 
-nav a{
-  position: relative;
-  margin: 0 20px;
-  font-size: 1.3em;
-  color: #333;
-  text-decoration:none;
-
+.nav-buttons button {
+  margin-left:5px;
 }
 
 
 
-.login-button {
+
+
+.loginlogout-button {
   padding: 5px 20px;
-  height:3%;
   background: #2ba1ff;
   color: #fff;
   border-radius: 40px;
   font-weight: 500;
   letter-spacing: 1px;
   text-decoration: none;
+  border: none;
 }
 
 .register-button {
   padding: 5px 20px;
-  height:3%;
   background: #ff3579;
   color: #fff;
   border-radius: 40px;
   font-weight: 500;
   letter-spacing: 1px;
   text-decoration: none;
+  border:none;
 }
 
 .slider {
   padding-top: 40px;
-  max-width:1300px;
-  margin-right: auto;
-  margin-left:auto;
   position: relative;
   width: 100%;
   display: flex;
@@ -122,15 +142,7 @@ nav a{
   padding-top:10px;
 }
 
-.custom-shape-divider-top-1605713709 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  fill: #EEFBFB;
-}
+
 
 .services-home {
   
@@ -231,7 +243,6 @@ services-home .blurb .blurbtext p{
 .newsletter {
   padding-top: 80px;
   height: 60vh;
-  background-color: #EEFBFB;
   
 }
 
@@ -358,7 +369,7 @@ footer h3 {
   position:relative;
 }
 
-.buttom-wrap input[type=text] {
+.buttom-wrap input[type=text],[type=password] {
   
   width: 95%;
   margin-left: auto;
@@ -371,7 +382,47 @@ footer h3 {
   font-size: 1em;
 }
 
-.buttom-wrap input[type=submit] {
+.buttom-wrap button {
+  padding: 5px 20px;
+  background: #ff3579;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: none;
+  width: 30%;
+  margin-left: auto;
+  margin-right:auto;
+  border-radius:20px;
+}
+
+.buttom-wrap-login {
+  margin-top: 20px;
+  background-color: #2ba1ff;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 30px;
+  box-shadow: 0px 5px 2px rgba(0,0,0,0.20);
+  border-radius: 10px;
+  position:relative;
+}
+
+.buttom-wrap-login input[type=text],[type=password] {
+  
+  width: 95%;
+  margin-left: auto;
+  margin-right:auto;
+  height:7vh;
+  border: none;
+  box-shadow: 0px 4px 2px rgba(0,0,0,0.20);
+  padding : 2px 6px;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.buttom-wrap-login button {
   padding: 5px 20px;
   background: #ff3579;
   color: #fff;

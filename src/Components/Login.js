@@ -30,24 +30,28 @@ const Login = props=>{
 
 
     return(
-        <div>
-            <form onSubmit={onSubmit}>
-                <h3>Please sign in</h3>
-                <label htmlFor="username" className="sr-only">Username: </label>
-                <input type="text" 
-                       name="username" 
-                       onChange={onChange} 
-                       className="form-control" 
-                       placeholder="Enter Username"/>
-                <label htmlFor="password" className="sr-only">Password: </label>
-                <input type="password" 
-                       name="password" 
-                       onChange={onChange} 
-                       className="form-control" 
-                       placeholder="Enter Password"/>
-                <button className="btn btn-lg btn-primary btn-block" 
-                        type="submit">Log in </button>
-            </form>
+        <div className="register-container">
+            <h1>Your Dashboard awaits you!</h1>
+                    <p>We will be there in no time</p>
+
+                    <div className="top-wrap">
+                    <a href="./"><i className="fas fa-chevron-left"></i> &nbsp; go back</a>
+                    </div>
+                    
+                        <form onSubmit={onSubmit} className='buttom-wrap-login'>
+                            
+                            <input type="text" 
+                                name="username" 
+                                onChange={onChange} 
+                                placeholder="Username"/>
+                            
+                            <input type="password" 
+                                name="password" 
+                                onChange={onChange} 
+                                placeholder="Password"/>
+                            <button type="submit">Log in</button>
+                        </form>
+                    
             {message ? <Message message={message}/> : null}
         </div>
     )

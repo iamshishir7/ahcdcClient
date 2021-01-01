@@ -38,32 +38,32 @@ const Register = props=>{
 
 
     return(
-        <div>
-            <form onSubmit={onSubmit}>
-                <h3>Please Register</h3>
-                <label htmlFor="username" className="sr-only">Username: </label>
+        <div className='register-container'>
+            <h1>Lets get you Signed Up!</h1>
+            <p>Fill out the form to be in our family</p>
+            <div className="top-wrap">
+                 <a href="./"> <i class="fas fa-chevron-left"></i> &nbsp; go back</a>
+            </div>
+            <form onSubmit={onSubmit} className='buttom-wrap'>
+                
                 <input type="text" 
                        name="username" 
                        value={user.username}
                        onChange={onChange} 
-                       className="form-control" 
-                       placeholder="Enter Username"/>
-                <label htmlFor="password" className="sr-only">Password: </label>
+                       placeholder="Username"/>
+                
                 <input type="password" 
                        name="password"
                        value={user.password} 
-                       onChange={onChange} 
-                       className="form-control" 
-                       placeholder="Enter Password"/>
+                       onChange={onChange}
+                       placeholder="Password"/>
                 <label htmlFor="role" className="sr-only">Role: </label>
                 <input type="text" 
                        name="role"
                        value={user.role}  
-                       onChange={onChange} 
-                       className="form-control" 
+                       onChange={onChange}
                        placeholder="Enter role (admin/user)"/>
-                <button className="btn btn-lg btn-primary btn-block" 
-                        type="submit">Register</button>
+                <button type="submit">Register</button>
             </form>
             {message ? <Message message={message}/> : null}
         </div>
