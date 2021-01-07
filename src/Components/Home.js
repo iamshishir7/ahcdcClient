@@ -1,70 +1,112 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Sliderimg from './assets/sliderimg.png';
+import './stylesheets/style.css'
+import {Container} from '@chakra-ui/react';
+import {Box} from '@chakra-ui/react';
+import {SimpleGrid} from '@chakra-ui/react';
+import { Text } from "@chakra-ui/react"
+import { Heading } from "@chakra-ui/react"
+import { Badge } from "@chakra-ui/react"
+import { Button } from "@chakra-ui/react";
+import { MdArrowForward } from 'react-icons/md';
+import { BiGame } from 'react-icons/bi';
+import { BiWorld } from 'react-icons/bi';
+import { RiCustomerService2Line } from 'react-icons/ri';
+import {
+    FormControl,
+    FormLabel,
+    FormErrorMessage,
+    FormHelperText,
+  } from "@chakra-ui/react"
+import { Input } from '@chakra-ui/react';
+import { useToast } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
+import {FaFacebook, FaTwitter} from 'react-icons/fa';
+
 
 const Home = ()=> {
+    const toast = useToast();
     return(
         <>
-        <section className="slider max-width">
-                    <div className="textBox">
-                        <h2>Its <span>AHCDC</span><br/>Career Counselling</h2>
-                        <p>AHCDC (Australasian Human Capital Development Centre) focuses on to develop the skills and develop the common base of knowledge to their employee and clients. AHCDC consist of both face to face training session as well as online training session over a long span of time. </p>
-                        <Link to="#">Learn More</Link>
-                    </div>
-                    <div className="imgBox">
-                        <img src={Sliderimg} className="sliderimg"/>
+        <SimpleGrid w='100%' columns={[1, null, 2]} spacing="40px">
+                    <Container  mt={[10, 20, 30, 40]} width="full">
+                        
+                    <Text
+                        bgGradient="linear(to-l, #7928CA,#FF0080)"
+                        bgClip="text"
+                        fontSize="6xl"
+                        fontWeight="extrabold"
+                        >
+                        Its AHCDC
+                    </Text>
 
-                    </div>
+                        <Box mt='10px' fontSize='16px'>AHCDC (Australasian Human Capital Development Centre) focuses on to develop the skills and develop the common base of knowledge to their employee and clients. AHCDC consist of both face to face training session as well as online training session over a long span of time. </Box>
+                        
+                        <Box d='flex' justifyContent='flex-start' mt='20px'>
+                        <Link to = './about'><Button rightIcon={<MdArrowForward />} variant="outline" mr='8px'>Learn More</Button></Link>
+                        <IconButton colorScheme="facebook" aria-label="Facebook" mr='8px'icon={<FaFacebook />}/>
+                        <IconButton colorScheme="twitter" aria-label="Twitter" icon={<FaTwitter />} />
+                        </Box>
+                        
+                    </Container>
+                    <Box>
+                        
+                        <img src={Sliderimg} className="sliderimg"/>
+                        
+
+                    </Box>
                     
-                </section>
+        </SimpleGrid>
                 
-                <section className="services-home">
-                    <div className="blurb">
-                        <div className="blurbimg">
-                            <i className="fas fa-award fa-6x"></i>
-                        </div>
-                        <div className="blurbtext">
-                            <i className="fas fa-award fa-6x"></i>
-                            <h3>Career Coaching</h3>
-                            <p>We provide best of the best quality career coaching for you to succeed in life.</p>
-                        </div>
-                    </div>
-                    <div className="blurb">
-                        <div className="blurbimg">
-                            <i className="fas fa-wifi fa-6x"></i>
-                        </div>
-                        <div className="blurbtext">
-                            <i className="fas fa-wifi fa-6x"></i>
-                            <h3>Online Consultation</h3>
-                            <p>Our services can be accessed remotely from your devices. This saves your time & money.</p>
-                        </div>
-                    </div>
-                    <div className="blurb">
-                        <div className="blurbimg">
-                            <i className="fas fa-gamepad fa-6x"></i>
-                        </div>
-                        <div className="blurbtext">
-                            <i className="fas fa-gamepad fa-6x"></i>
-                            <h3>Career Games</h3>
-                            <p>Our next gen games will help you find your best career path. Register and Start Playing.</p>
-                        </div>
-                    </div>
-                    
-                </section>
-                <section className="newsletter max-width">
-                    <div className="title-box">
-                        <h2>Subscribe to our Newsletter</h2>
-                    </div>
-                    <form>
-                    <div className="input-row">
-                        <input type="text" name="fullname" placeholder="Full Name" class="fullname-class"/>
-                    </div>
-                    <div className="input-row">
-                        <input type="text" name="email" placeholder="Your Email" class="email-class"/>
-                        <input type="submit" class="submit-class" value="Submit"/>
-                    </div>
-                    </form>
-                </section>
+        <Box d='flex' minHeight='70vh' alignItems='center' bg='#edf2f6'>
+            <SimpleGrid  w='100%' columns={[1, null, 3]} className='max-width'>
+                <Container overflow='hidden'>
+                    <Box d='flex' alignItems='center' justifyContent='center'><BiGame size='100'/></Box>
+                    <Heading d='flex' alignItems='center' justifyContent='center' fontSize='24px'>Career Games &nbsp;<Badge colorScheme="purple">New</Badge> </Heading>
+                    <Text noOfLines={2} >Our next gen games will help you find your best career path. Register and Start Playing.</Text>
+                </Container>
+                <Container overflow='hidden'>
+                    <Box d='flex' alignItems='center' justifyContent='center'><BiWorld size='100'/></Box>
+                    <Heading d='flex' alignItems='center' justifyContent='center' fontSize='24px'>Online Consultation</Heading>
+                    <Text noOfLines={2}>Our services can be accessed remotely from your devices. This saves your time & money.</Text>
+                </Container>
+                <Container overflow='hidden'>
+                    <Box d='flex' alignItems='center' justifyContent='center'><RiCustomerService2Line size='100'/></Box>
+                    <Heading d='flex' alignItems='center' justifyContent='center' fontSize='24px'>Career Coaching</Heading>
+                    <Text noOfLines={2}>We provide best of the best quality career coaching for you to succeed in life.</Text>
+                </Container>
+            </SimpleGrid>
+        </Box>
+        <Box className='max-width' minHeight='60vh' d='flex' alignItems='center' justifyContent='center' flexDir='column'>
+        <Text textAlign='center'
+                        bgGradient="linear(to-l, #7928CA,#FF0080)"
+                        bgClip="text"
+                        fontSize="4xl"
+                        fontWeight="bold"
+                        >
+                        Subscribe to our Newsletter
+                    </Text>
+            
+                <FormControl id="first-name" isRequired w='60%' m='10px'>
+                <Input placeholder="First name"/>
+                </FormControl>
+                <FormControl id="email" isRequired w='60%' m='10px'> 
+                <Input type='email' placeholder="Email" />
+                </FormControl>
+                <Button rightIcon={<MdArrowForward />} variant="outline" mt='15px' onClick={() =>
+                    toast({
+                    position: "bottom-left",
+                    render: () => (
+                        <Box color="white" p={3} bg="blue.500">
+                        This service is Under Construction
+                        </Box>
+                    ),
+                    })
+                }>
+                        Submit
+                </Button>
+             </Box>
             </>
     )
 }

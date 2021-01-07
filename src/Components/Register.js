@@ -1,9 +1,11 @@
 import React, {useState,useRef,useEffect} from 'react';
 import AuthService from '../Services/AuthService';
 import Message from '../Components/Message';
+import { Text } from '@chakra-ui/react';
+
 
 const Register = props=>{
-    const [user,setUser] = useState({username: "", password : "", role : ""});
+    const [user,setUser] = useState({fullname: "", email: "", username: "", password : ""});
     const [message,setMessage] = useState(null);
     let timerID = useRef(null);
 
@@ -18,7 +20,7 @@ const Register = props=>{
     }
 
     const resetForm = ()=>{
-        setUser({username : "", password : "",role : ""});
+        setUser({fullname: "", email: "", username: "", password : ""});
     }
 
     const onSubmit = e =>{
@@ -39,30 +41,46 @@ const Register = props=>{
 
     return(
         <div className='register-container'>
-            <h1>Lets get you Signed Up!</h1>
-            <p>Fill out the form to be in our family</p>
+            <Text textAlign='center'
+                        bgGradient="linear(to-l, #7928CA,#FF0080)"
+                        bgClip="text"
+                        fontSize="2xl"
+                        fontWeight="bold"
+                        >
+                        Lets get you Signed Up
+                    </Text>
+                    <Text textAlign='center'>Fill out the form to be in our family</Text>
+
             <div className="top-wrap">
                  <a href="./"> <i class="fas fa-chevron-left"></i> &nbsp; go back</a>
             </div>
             <form onSubmit={onSubmit} className='buttom-wrap'>
-                
+                <input type="text" 
+                       name="fullname" 
+                       value={user.fullname}
+                       onChange={onChange} 
+                       placeholder="Full Name"/>
+
+                <input type="text" 
+                       name="email" 
+                       value={user.email}
+                       onChange={onChange} 
+                       placeholder="Email"/>
+
                 <input type="text" 
                        name="username" 
                        value={user.username}
                        onChange={onChange} 
                        placeholder="Username"/>
                 
+                
                 <input type="password" 
                        name="password"
                        value={user.password} 
                        onChange={onChange}
                        placeholder="Password"/>
-                <label htmlFor="role" className="sr-only">Role: </label>
-                <input type="text" 
-                       name="role"
-                       value={user.role}  
-                       onChange={onChange}
-                       placeholder="Enter role (admin/user)"/>
+                
+                
                 <button type="submit">Register</button>
             </form>
             {message ? <Message message={message}/> : null}

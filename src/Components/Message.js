@@ -1,21 +1,34 @@
 import React from 'react'
+import {
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription, CloseButton
+  } from "@chakra-ui/react";
 
 
-const getStyle = (props)=>{
-    let baseClass = "alert ";
-    if(props.message.msgError)
-        baseClass = baseClass + "alert-danger";
-    else
-        baseClass = baseClass + "alert-primary";
-    return baseClass + " text-center";
-}
 
-const Message = props=>{
-    return(
-        <div className={getStyle(props)} role="alert">
-            {props.message.msgBody}
-        </div>
-    )
+
+const Message = (props)=>{
+    if(props.message.msgError) {
+        return(
+            <Alert status="error">
+                <AlertIcon />
+                <AlertTitle mr={2}>Oops!</AlertTitle>
+                <AlertDescription>{props.message.msgBody}</AlertDescription>
+                <CloseButton position="absolute" right="8px" top="8px" />
+            </Alert>
+        );
+    } else {
+        return(
+            <Alert status="success" variant="subtle">
+                <AlertIcon />
+                {props.message.msgBody}
+            </Alert>
+        );
+    }
+
+
 }
 
 export default Message;

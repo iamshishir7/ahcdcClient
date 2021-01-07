@@ -30,7 +30,7 @@ const Navbar = props =>{
                 </Link>
                 </li> 
                 <li>
-                <Link to="#" className="no-txtdeco">
+                <Link to="/about" className="no-txtdeco">
                     About
                 </Link>
                 </li>

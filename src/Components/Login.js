@@ -2,6 +2,7 @@ import React, {useState,useContext} from 'react';
 import AuthService from '../Services/AuthService';
 import Message from '../Components/Message';
 import {AuthContext} from '../Context/AuthContext';
+import { Text } from '@chakra-ui/react';
 
 const Login = props=>{
     const [user,setUser] = useState({username: "", password : ""});
@@ -31,8 +32,15 @@ const Login = props=>{
 
     return(
         <div className="register-container">
-            <h1>Your Dashboard awaits you!</h1>
-                    <p>We will be there in no time</p>
+            <Text textAlign='center'
+                        bgGradient="linear(to-l, #7928CA,#FF0080)"
+                        bgClip="text"
+                        fontSize="2xl"
+                        fontWeight="bold"
+                        >
+                        Your Dashboard Awaits you
+                    </Text>
+                    <Text textAlign='center'>We will be there in no time</Text>
 
                     <div className="top-wrap">
                     <a href="./"><i className="fas fa-chevron-left"></i> &nbsp; go back</a>
