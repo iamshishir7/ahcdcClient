@@ -20,12 +20,12 @@ const Navbar = props =>{
         return (
             <>
                 <li>
-                <Link to="#" className="no-txtdeco">
-                    Explore
+                <Link to="/" className="no-txtdeco">
+                    Home
                 </Link>
                 </li>  
                 <li>
-                <Link to="./login" className="no-txtdeco">
+                <Link to="./services" className="no-txtdeco">
                     Services
                 </Link>
                 </li> 
@@ -51,17 +51,17 @@ const Navbar = props =>{
             <>
             
             <li>
-                <Link to="#" className="no-txtdeco">
-                    Explore
+                <Link to="./" className="no-txtdeco">
+                    Home
                 </Link>
                 </li>  
                 <li>
-                <Link to="./login" className="no-txtdeco">
+                <Link to="./services" className="no-txtdeco">
                     Services
                 </Link>
                 </li> 
                 <li>
-                <Link to="#" className="no-txtdeco">
+                <Link to="./about" className="no-txtdeco">
                     About
                 </Link>
                 </li>
