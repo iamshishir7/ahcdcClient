@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "https://ahcdc.netlify.app",
+  "homepage": "http://iamshishir7.github.io/ahcdcClient",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
