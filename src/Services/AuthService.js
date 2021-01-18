@@ -1,4 +1,5 @@
 
+
 export default {
     login : user =>{
         console.log(user);
@@ -32,7 +33,13 @@ export default {
                 .then(data => data);
     },
     isAuthenticated : ()=>{
-        return fetch('/user/authenticated')
+        
+        return fetch('/user/authenticated', {
+            method : "get",
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+        })
                 .then(res=>{
                     if(res.status !== 401)
                         return res.json().then(data => data);
@@ -42,3 +49,4 @@ export default {
     }
 
 }
+

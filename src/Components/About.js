@@ -26,36 +26,8 @@ import {FaFacebook, FaTwitter} from 'react-icons/fa';
 import {MdSentimentVerySatisfied} from 'react-icons/md'
 
 const About = ()=> {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-
-    const handleClick = (e) => {
-        e.preventDefault();
-
-        if(e.target.id == "name") {
-            setName(e.target.value)
-        } 
-        if(e.target.id == "email"){
-            setEmail(e.target.value)
-        } 
-        if(e.target.id == "message") {
-            setMessage(e.target.value)
-        }
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const datatoSubmit = {
-            name,
-            email,
-            message
-        }
-
-        console.log(datatoSubmit);
-
-        //axios.post('/api/contact', datatoSubmit);
-    }
+    
+   
     return(
         <>
         <Box className='max-width' h='20vh' d='flex' flexDirection='column' justifyContent='center' >
@@ -86,7 +58,7 @@ const About = ()=> {
         </Box>
         <Box minHeight='70vh' d='flex'  bg='#edf2f6' >
         
-                <form onSubmit={handleSubmit} className='max-width' w='1300px'>
+                <form className='max-width' w='1300px'>
                 <Text textAlign='center'
                         bgGradient="linear(to-l, #7928CA,#FF0080)"
                         bgClip="text"
@@ -97,16 +69,16 @@ const About = ()=> {
                         Contact Us
                     </Text>
                 <FormControl id="first-name" isRequired w='700px' mt='10px'>
-                <Input id='name' placeholder="Full Name" value={name} onChange={handleClick} bg='#fff'/>
+                <Input id='name' placeholder="Full Name"  bg='#fff'/>
                 </FormControl>
                 <FormControl id="first-name" isRequired  mt='10px'>
-                <Input id='email' type='email' placeholder="Email" value={email} onChange={handleClick} bg='#fff'/>
+                <Input id='email' type='email' placeholder="Email"  bg='#fff'/>
                 </FormControl>
                 <FormControl id="first-name" isRequired mt='10px'>
-                <Textarea id='message' placeholder="Write here" value={message} onChange={handleClick} h='20vh' bg='#fff'/>
+                <Textarea id='message' placeholder="Write here"  h='20vh' bg='#fff'/>
                 </FormControl>
                 <Box mt='15px' d='flex' justifyContent='flex-start' w='40%'>
-                <Button rightIcon={<MdArrowForward />} variant="outline" onClick={handleSubmit} mr='8px'>
+                <Button rightIcon={<MdArrowForward />} variant="outline"  mr='8px'>
                         Submit
                 </Button>
                 <IconButton colorScheme="facebook" aria-label="Facebook" mr='8px'icon={<FaFacebook />}/>
