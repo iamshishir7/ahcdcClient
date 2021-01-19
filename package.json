@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "http://iamshishir7.github.io/ahcdcClient",
+  "homepage": "https://iamshishir7.github.io/ahcdcClient",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -48,6 +48,7 @@
   },
   "proxy": "https://ahcdcproject.herokuapp.com",
   "devDependencies": {
+    
     "gh-pages": "^3.1.0"
   }
 }

@@ -10,7 +10,7 @@ import About  from './Components/About';
 import Services  from './Components/services';
 import PrivateRoute from './hocs/PrivateRoute';
 import UnPrivateRoute from './hocs/UnPrivateRoute';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
