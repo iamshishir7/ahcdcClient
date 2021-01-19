@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/ahcdcClient/static/css/main.766c2694.chunk.css",
-    "main.js": "/ahcdcClient/static/js/main.71fdd5df.chunk.js",
-    "main.js.map": "/ahcdcClient/static/js/main.71fdd5df.chunk.js.map",
+    "main.js": "/ahcdcClient/static/js/main.36896242.chunk.js",
+    "main.js.map": "/ahcdcClient/static/js/main.36896242.chunk.js.map",
     "runtime-main.js": "/ahcdcClient/static/js/runtime-main.59189e99.js",
     "runtime-main.js.map": "/ahcdcClient/static/js/runtime-main.59189e99.js.map",
-    "static/js/2.57801d1a.chunk.js": "/ahcdcClient/static/js/2.57801d1a.chunk.js",
-    "static/js/2.57801d1a.chunk.js.map": "/ahcdcClient/static/js/2.57801d1a.chunk.js.map",
+    "static/js/2.26fa2b01.chunk.js": "/ahcdcClient/static/js/2.26fa2b01.chunk.js",
+    "static/js/2.26fa2b01.chunk.js.map": "/ahcdcClient/static/js/2.26fa2b01.chunk.js.map",
     "index.html": "/ahcdcClient/index.html",
     "static/css/main.766c2694.chunk.css.map": "/ahcdcClient/static/css/main.766c2694.chunk.css.map",
-    "static/js/2.57801d1a.chunk.js.LICENSE.txt": "/ahcdcClient/static/js/2.57801d1a.chunk.js.LICENSE.txt",
+    "static/js/2.26fa2b01.chunk.js.LICENSE.txt": "/ahcdcClient/static/js/2.26fa2b01.chunk.js.LICENSE.txt",
     "static/media/sliderimg.cec138d8.png": "/ahcdcClient/static/media/sliderimg.cec138d8.png"
   },
   "entrypoints": [
     "static/js/runtime-main.59189e99.js",
-    "static/js/2.57801d1a.chunk.js",
+    "static/js/2.26fa2b01.chunk.js",
     "static/css/main.766c2694.chunk.css",
-    "static/js/main.71fdd5df.chunk.js"
+    "static/js/main.36896242.chunk.js"
   ]
 }
