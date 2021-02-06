@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Sliderimg from './assets/sliderimg.png';
-import './stylesheets/style.css'
+
 import {Container} from '@chakra-ui/react';
 import {Box} from '@chakra-ui/react';
 import {SimpleGrid} from '@chakra-ui/react';

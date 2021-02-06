@@ -17,6 +17,7 @@ import PrivateRoute from './hocs/PrivateRoute';
 import UnPrivateRoute from './hocs/UnPrivateRoute';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { ChakraProvider } from "@chakra-ui/react";
+import './Components/stylesheets/style.css';
 
 function App() {
   return (
