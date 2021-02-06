@@ -3,6 +3,9 @@ import TodoItem from './TodoItem';
 import TodoService from '../Services/TodoService';
 import Message from './Message';
 import { AuthContext } from '../Context/AuthContext';
+import {Box, Input, Button, Heading, Text } from '@chakra-ui/react';
+import { List, ListItem, ListIcon } from "@chakra-ui/react"
+import {MdArrowForward} from 'react-icons/md'
 
 const Todos = props =>{
     const [todo,setTodo] = useState({name : ""});
@@ -47,27 +50,39 @@ const Todos = props =>{
     }
 
     return(
-        <div>
-            <ul className="list-group">
+        <div className='max-width'>
+            <Box maxW="32rem" mt='10vh'>
+                <Heading mb={4}>Save your Notes</Heading>
+                <Text fontSize="xl">
+                    Your Notes are always safe with us. Use this Service free of cost.
+                </Text>
+                
+            </Box>
+            <Box mt='20px' borderWidth="1px" borderRadius="lg" overflow="hidden" minHeight='100px' p='30px'>
+            <List spacing={3}>
                 {
                     todos.map(todo =>{
                         return <TodoItem key={todo._id} todo={todo}/>
                     })
                 }
-            </ul>
+            </List>
+            </Box>
             <br/>
             <form onSubmit={onSubmit}>
-                <label htmlFor="todo">Enter Todo</label>
-                <input type="text" 
-                       name="todo" 
-                       value={todo.name} 
-                       onChange={onChange}
-                       className="form-control"
-                       placeholder="Please Enter Todo"/>
-                <button className="btn btn-lg btn-primary btn-block" 
-                        type="submit">Submit</button>
+            <Input
+            focusBorderColor="pink.400"
+            placeholder="Enter Your Notes Here"
+            value={todo.name} 
+            onChange={onChange}
+            />
+            
+            <Button rightIcon={<MdArrowForward />} variant="outline" type='submit' mt='20px' color=' #ff3579' borderColor=' #ff3579'>
+             Save
+            </Button>
             </form>
+            <Box mt='30px'>
             {message ? <Message message={message}/> : null}
+            </Box>
         </div>
     );
 

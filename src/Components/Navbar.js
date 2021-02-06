@@ -54,17 +54,14 @@ const Navbar = props =>{
                 <Link to="./" className="no-txtdeco">
                     Home
                 </Link>
-                </li>  
+                </li> 
+                
                 <li>
-                <Link to="./services" className="no-txtdeco">
-                    Services
+                <Link to="./dashboard" className="no-txtdeco">
+                    Dashboard
                 </Link>
                 </li> 
-                <li>
-                <Link to="./about" className="no-txtdeco">
-                    About
-                </Link>
-                </li>
+                
                 
                 {
                     user.role === "admin" ? 
@@ -76,7 +73,7 @@ const Navbar = props =>{
                     </Link>
                     </li> : null
                 }
-                 
+                
                 <li>
                 <button type="button" 
                         className="loginlogout-button" 

@@ -24,8 +24,20 @@ import { useToast } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/react";
 import {FaFacebook, FaTwitter} from 'react-icons/fa';
 import {MdSentimentVerySatisfied} from 'react-icons/md'
+import emailjs from 'emailjs-com';
 
 const About = ()=> {
+
+    function sendEmail(e) {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_5ca2ldu', 'template_o8ieuvk', e.target, 'user_Jre2kw1TB6hg15T0VLp6o')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      }
     
    
     return(
@@ -58,7 +70,7 @@ const About = ()=> {
         </Box>
         <Box minHeight='70vh' d='flex'  bg='#edf2f6' >
         
-                <form className='max-width' w='1300px'>
+                <form className='max-width' w='1300px' onSubmit={sendEmail}>
                 <Text textAlign='center'
                         bgGradient="linear(to-l, #7928CA,#FF0080)"
                         bgClip="text"
@@ -68,19 +80,18 @@ const About = ()=> {
                         >
                         Contact Us
                     </Text>
-                <FormControl id="first-name" isRequired w='700px' mt='10px'>
-                <Input id='name' placeholder="Full Name"  bg='#fff'/>
+                <FormControl id="full-name" isRequired w='700px' mt='10px'>
+                <Input name='fullName' placeholder="Full Name"  bg='#fff'/>
                 </FormControl>
-                <FormControl id="first-name" isRequired  mt='10px'>
-                <Input id='email' type='email' placeholder="Email"  bg='#fff'/>
+                <FormControl id="Email" isRequired  mt='10px'>
+                <Input name='email' type='email' placeholder="Your Email"  bg='#fff'/>
                 </FormControl>
-                <FormControl id="first-name" isRequired mt='10px'>
-                <Textarea id='message' placeholder="Write here"  h='20vh' bg='#fff'/>
+                <FormControl id="message" isRequired mt='10px'>
+                <Textarea name='message' placeholder="Write here"  h='20vh' bg='#fff'/>
                 </FormControl>
                 <Box mt='15px' d='flex' justifyContent='flex-start' w='40%'>
-                <Button rightIcon={<MdArrowForward />} variant="outline"  mr='8px'>
-                        Submit
-                </Button>
+                
+                <Button rightIcon={<MdArrowForward />} variant="outline" mr='8px' color=' #ff3579' borderColor=' #ff3579' type='submit'>Submit</Button>
                 <IconButton colorScheme="facebook" aria-label="Facebook" mr='8px'icon={<FaFacebook />}/>
                 <IconButton colorScheme="twitter" aria-label="Twitter" icon={<FaTwitter />} />
                 </Box>

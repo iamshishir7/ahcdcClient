@@ -44,7 +44,7 @@ const Home = ()=> {
                         <Box mt='10px' fontSize='16px'>AHCDC (Australasian Human Capital Development Centre) focuses on to develop the skills and develop the common base of knowledge to their employee and clients. AHCDC consist of both face to face training session as well as online training session over a long span of time. </Box>
                         
                         <Box d='flex' justifyContent='flex-start' mt='20px'>
-                        <Link to = './about'><Button rightIcon={<MdArrowForward />} variant="outline" mr='8px' color=' #ff3579' borderColor=' #ff3579'>Learn More</Button></Link>
+                        <Link to = './about'><Button colorScheme='blue' rightIcon={<MdArrowForward />} variant="outline" mr='8px' color=' #ff3579' borderColor=' #ff3579'>Learn More</Button></Link>
                         <IconButton colorScheme="facebook" aria-label="Facebook" mr='8px'icon={<FaFacebook />}/>
                         <IconButton colorScheme="twitter" aria-label="Twitter" icon={<FaTwitter />} />
                         </Box>
