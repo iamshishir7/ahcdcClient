@@ -1,7 +1,7 @@
 
 
 
-export default AuthService= {
+export default  {
     login : user =>{
         console.log(user);
         return fetch('/user/login',{
