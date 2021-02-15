@@ -1,7 +1,7 @@
 
 
 
-const AuthService= {
+export default AuthService= {
     login : user =>{
         console.log(user);
         return fetch('/user/login',{
@@ -45,6 +45,4 @@ const AuthService= {
     }
 
 }
-
-export default AuthService
 
